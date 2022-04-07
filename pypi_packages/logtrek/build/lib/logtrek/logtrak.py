@@ -122,15 +122,24 @@ def log_subscript_finish( tagging, print_comment ):
     print( "subscript finished: " + tagging + ":-- " + print_comment )
 
 
-def log_script_finish( ):
+def log_script_finish( with_beep = 1 ):
     print_comment = "script finished"
     logging.info( print_comment )
-    bips.bip_notifs.done_status_beep( )
+
+    if with_beep == 1:
+        bips.bip_notifs.done_status_beep( )
+    else:
+        pass
+
     print( print_comment )
 
 
-def log_exception( exception ):
-    bips.bip_notifs.error_beep( )
+def log_exception( exception, with_beep = 1 ):
+    if with_beep == 1:
+        bips.bip_notifs.error_beep( )
+    else:
+        pass
+
     logging.debug( "error encountered: " + str( str( exception ).encode( "utf-8" ).decode( "utf-8" ) ) )
     print( "error encountered: " + str( str( exception ).encode( "utf-8" ).decode( "utf-8" ) ) )
 ##log_comments >> ===================
