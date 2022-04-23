@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 import codecs
 import os
 
-version = "0.0.1.4"
+version = "0.0.1.6"
 
 description = "to automate creation of folders and subfolders"
 
